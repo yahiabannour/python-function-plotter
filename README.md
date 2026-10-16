@@ -1,44 +1,44 @@
-# Function Plotter – Python, Tkinter and Matplotlib
+# Funktionsplotter – Python, Tkinter und Matplotlib
 
-A desktop tool for plotting mathematical functions, parametric curves, Bode diagrams and 3D surfaces. It can be
-used through a Tkinter GUI, or headless with a plain-text configuration file.
+Ein Desktop-Programm zum Zeichnen mathematischer Funktionen, Parameterkurven, Bode-Diagramme und 3D-Flächen. Es
+lässt sich über eine Tkinter-Oberfläche bedienen oder ohne Oberfläche mit einer Konfigurationsdatei im Textformat.
 
-Built for the Python course at Hochschule Hannover, winter semester 2025/26.
+Entstanden im Python-Kurs an der Hochschule Hannover, Wintersemester 2025/26.
 
-| Functions, analysis and measured data | Bode diagram | 3D surface and contour |
+| Funktionen, Kurvenanalyse und Messwerte | Bode-Diagramm | 3D-Fläche und Höhenlinien |
 |---|---|---|
-| ![2D plot](docs/plot-2d.png) | ![Bode diagram](docs/plot-bode.png) | ![3D plot](docs/plot-3d.png) |
+| ![2D-Plot](docs/plot-2d.png) | ![Bode-Diagramm](docs/plot-bode.png) | ![3D-Plot](docs/plot-3d.png) |
 
-## Features
+## Funktionen
 
-- **Four plot modes**
-  - **2D**: several functions f(x) at once
-  - **Parametric**: curves x(t), y(t)
-  - **Bode**: magnitude and phase of a transfer function given as numerator and denominator coefficients
-  - **3D**: surfaces and contour plots of f(x, y)
-- **Curve analysis**: numerical first and second derivatives, and marked roots, extrema and inflection points
-  (roots are refined by linear interpolation)
-- **Measured data**: load x/y values from a text file and show them as a line or scatter plot next to the
-  functions
-- **Configurable styling**: titles, labels, grid, legend, and colours, line widths and line styles per function
-- **Interactive GUI**: live cursor coordinates, click-to-annotate points, zoom and pan through the Matplotlib
-  toolbar, export as an image
-- **Save and load configurations** as readable `key: value` files
-- **Safe expression evaluation**: expressions only see a whitelist of NumPy functions and constants, with no
-  Python built-ins; `^` works as the power operator
+- **Vier Plot-Modi**
+  - **2D**: mehrere Funktionen f(x) gleichzeitig
+  - **Parametrisch**: Kurven x(t), y(t)
+  - **Bode**: Betrag und Phase einer Übertragungsfunktion, angegeben über Zähler- und Nennerkoeffizienten
+  - **3D**: Flächen- und Höhenliniendiagramme von f(x, y)
+- **Kurvenanalyse**: numerische erste und zweite Ableitung sowie markierte Nullstellen, Extrema und Wendepunkte
+  (Nullstellen werden durch lineare Interpolation verfeinert)
+- **Messwerte**: x/y-Werte aus einer Textdatei laden und als Linie oder Punktwolke neben den Funktionen anzeigen
+- **Anpassbare Darstellung**: Titel, Achsenbeschriftungen, Gitter, Legende sowie Farbe, Linienbreite und
+  Linienstil pro Funktion
+- **Interaktive Oberfläche**: Cursor-Koordinaten live, Punkte per Klick beschriften, Zoomen und Verschieben über
+  die Matplotlib-Werkzeugleiste, Export als Bild
+- **Konfigurationen speichern und laden** als lesbare `Schlüssel: Wert`-Dateien
+- **Sichere Auswertung von Ausdrücken**: Ausdrücke sehen nur eine freigegebene Liste von NumPy-Funktionen und
+  Konstanten, keine Python-Built-ins; `^` funktioniert als Potenzoperator
 
-## Running it
+## Starten
 
 ```bash
 pip install numpy matplotlib
-python app.py                                 # GUI
-python app.py examples/config_bode.txt        # headless: plot straight from a config file
+python app.py                                 # Oberfläche
+python app.py examples/config_bode.txt        # ohne Oberfläche: direkt aus einer Konfigurationsdatei plotten
 ```
 
-## Configuration format
+## Konfigurationsformat
 
 ```text
-# Two functions with analysis and measured data
+# Zwei Funktionen mit Kurvenanalyse und Messwerten
 functions: [exp(-0.5*x)*sin(x), cos(x)]
 xstart: 0
 xend: 10
@@ -49,18 +49,18 @@ data_file: examples/messwerte.txt
 title: Function Plot Example
 ```
 
-More examples are in [`examples/`](examples/).
+Weitere Beispiele liegen in [`examples/`](examples/).
 
-## Structure
+## Aufbau
 
-| File | Role |
-|------|------|
-| `app.py` | Entry point: GUI mode, or headless mode when a config file is given |
-| `gui.py` | Tkinter interface with controls for each mode and the embedded Matplotlib canvas |
-| `plotter.py` | All plotting and numerical analysis, independent of the GUI |
-| `config_parser.py` | Reads `key: value` files and converts the values to bool, numbers and lists |
-| `widgets.py` | A scrollable frame for the long control panel |
+| Datei | Aufgabe |
+|-------|---------|
+| `app.py` | Einstiegspunkt: Oberfläche, oder Modus ohne Oberfläche, wenn eine Konfigurationsdatei übergeben wird |
+| `gui.py` | Tkinter-Oberfläche mit Bedienelementen für jeden Modus und eingebetteter Matplotlib-Zeichenfläche |
+| `plotter.py` | Alle Plots und die numerische Analyse, unabhängig von der Oberfläche |
+| `config_parser.py` | Liest `Schlüssel: Wert`-Dateien und wandelt die Werte in Wahrheitswerte, Zahlen und Listen um |
+| `widgets.py` | Ein scrollbarer Rahmen für das lange Bedienfeld |
 
-## Tech stack
+## Technologien
 
 Python · Tkinter · Matplotlib · NumPy
