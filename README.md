@@ -6,6 +6,8 @@ A versatile plotting tool built with **Python**, **Tkinter** and **Matplotlib**.
 parametric shapes to Bode diagrams and 3D surfaces, it turns mathematical expressions into clear, interactive plots
 – with automatic curve analysis and support for measured data.
 
+👥 Team project by **[Firas Mannai](https://github.com/FirasMannai)** and **Yahia Bannour**.
+
 | 📉 Functions, curve analysis and measured data | 📶 Bode diagram | 🏔️ 3D surface and contour lines |
 |---|---|---|
 | ![2D plot](docs/plot-2d.png) | ![Bode diagram](docs/plot-bode.png) | ![3D plot](docs/plot-3d.png) |

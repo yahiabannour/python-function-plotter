@@ -6,6 +6,8 @@ Ein vielseitiges Plot-Werkzeug, gebaut mit **Python**, **Tkinter** und **Matplot
 Parameterkurven bis zu Bode-Diagrammen und 3D-Flächen macht es aus mathematischen Ausdrücken übersichtliche,
 interaktive Plots – mit automatischer Kurvenanalyse und Unterstützung für Messwerte.
 
+👥 Teamprojekt von **[Firas Mannai](https://github.com/FirasMannai)** und **Yahia Bannour**.
+
 | 📉 Funktionen, Kurvenanalyse und Messwerte | 📶 Bode-Diagramm | 🏔️ 3D-Fläche und Höhenlinien |
 |---|---|---|
 | ![2D-Plot](docs/plot-2d.png) | ![Bode-Diagramm](docs/plot-bode.png) | ![3D-Plot](docs/plot-3d.png) |
