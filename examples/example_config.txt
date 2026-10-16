@@ -1,0 +1,22 @@
+####################################
+# Konfigurationsdaten Funktionsplotter
+# Basic function plot
+functions: [exp(-0.5*x)*sin(x), cos(x)]
+xstart: 0
+xend: 10
+xstep: 0.1
+grid: True
+legend: True
+title: Function Plot Example
+xlabel: x values
+ylabel: y values
+colors: [blue, red]
+linewidths: [2, 1.5]
+linestyles: ['-', '--']
+
+# Advanced features
+find_roots: True
+find_extrema: True
+show_derivatives: False
+plot_type: scatter
+####################################
