@@ -1,3 +1,5 @@
+**Deutsch** | [English](README.en.md)
+
 # Funktionsplotter – Python, Tkinter und Matplotlib
 
 Ein Desktop-Programm zum Zeichnen mathematischer Funktionen, Parameterkurven, Bode-Diagramme und 3D-Flächen. Es
