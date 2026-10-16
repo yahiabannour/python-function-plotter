@@ -1,35 +1,50 @@
 [Deutsch](README.md) | **English**
 
-# Function plotter – Python, Tkinter and Matplotlib
+# 📈 Function Plotter – Python, Tkinter & Matplotlib 🚀
 
-A desktop program for plotting mathematical functions, parametric curves, Bode diagrams and 3D surfaces. It can be
-used through a Tkinter GUI, or without a GUI from a plain-text configuration file.
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)
+![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
+
+A desktop program for plotting mathematical functions, parametric curves, Bode diagrams and 3D surfaces – through
+a **Tkinter GUI** or without a GUI from a plain-text configuration file.
 
 Built for the Python course at Hochschule Hannover, winter semester 2025/26.
 
-| Functions, curve analysis and measured data | Bode diagram | 3D surface and contour lines |
+| 📉 Functions, curve analysis and measured data | 📶 Bode diagram | 🏔️ 3D surface and contour lines |
 |---|---|---|
 | ![2D plot](docs/plot-2d.png) | ![Bode diagram](docs/plot-bode.png) | ![3D plot](docs/plot-3d.png) |
 
-## Features
+---
 
-- **Four plot modes**
-  - **2D**: several functions f(x) at once
-  - **Parametric**: curves x(t), y(t)
-  - **Bode**: magnitude and phase of a transfer function given as numerator and denominator coefficients
-  - **3D**: surface and contour plots of f(x, y)
-- **Curve analysis**: numerical first and second derivatives, and marked roots, extrema and inflection points
-  (roots are refined by linear interpolation)
-- **Measured data**: load x/y values from a text file and show them as a line or scatter plot next to the
-  functions
-- **Customisable styling**: title, axis labels, grid, legend, and colour, line width and line style per function
-- **Interactive GUI**: live cursor coordinates, click-to-annotate points, zoom and pan through the Matplotlib
-  toolbar, export as an image
-- **Save and load configurations** as readable `key: value` files
-- **Safe expression evaluation**: expressions only see a whitelist of NumPy functions and constants, with no
-  Python built-ins; `^` works as the power operator
+## ✨ Features
 
-## Running it
+### 🖼️ Four plot modes
+* **2D**: several functions f(x) at once
+* **🌀 Parametric**: curves x(t), y(t)
+* **📶 Bode**: magnitude and phase of a transfer function from numerator and denominator coefficients
+* **🏔️ 3D**: surface and contour plots of f(x, y)
+
+### 🔬 Curve analysis
+* Numerical **1st and 2nd derivatives**
+* Marked **roots**, **extrema** and **inflection points** (roots refined by linear interpolation)
+
+### 📊 Data & configuration
+* **Measured data**: load x/y values from a text file and show them as a line or scatter plot
+* **💾 Save and load configurations** as readable `key: value` files
+* **🎨 Styling**: title, axis labels, grid, legend, and colour, line width and line style per function
+
+### 🖱️ Interactive GUI
+* Live cursor coordinates and **click-to-annotate** points
+* Zoom and pan through the Matplotlib toolbar, **export as an image**
+
+### 🔒 Safe expression evaluation
+* Expressions only see a **whitelist** of NumPy functions and constants, with no Python built-ins; `^` works as
+  the power operator
+
+---
+
+## 🛠️ Getting Started
 
 ```bash
 pip install numpy matplotlib
@@ -37,7 +52,9 @@ python app.py                                 # GUI
 python app.py examples/config_bode.txt        # without GUI: plot straight from a configuration file
 ```
 
-## Configuration format
+---
+
+## 📝 Configuration Format
 
 ```text
 # Two functions with curve analysis and measured data
@@ -53,7 +70,9 @@ title: Function Plot Example
 
 More examples are in [`examples/`](examples/).
 
-## Structure
+---
+
+## 🏗️ Structure
 
 | File | Role |
 |------|------|
@@ -63,6 +82,8 @@ More examples are in [`examples/`](examples/).
 | `config_parser.py` | Reads `key: value` files and converts the values to booleans, numbers and lists |
 | `widgets.py` | A scrollable frame for the long control panel |
 
-## Tech stack
+---
+
+## 🧰 Tech Stack
 
 Python · Tkinter · Matplotlib · NumPy
