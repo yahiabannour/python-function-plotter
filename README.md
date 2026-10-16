@@ -1,64 +1,81 @@
-**Deutsch** | [English](README.en.md)
+**English** | [Deutsch](README.de.md)
 
-# 📈 Funktionsplotter – Python, Tkinter & Matplotlib 🚀
+# 📈 Function Plotter 🚀
 
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)
-![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
+A versatile plotting tool built with **Python**, **Tkinter** and **Matplotlib**. From simple 2D curves and
+parametric shapes to Bode diagrams and 3D surfaces, it turns mathematical expressions into clear, interactive plots
+– with automatic curve analysis and support for measured data.
 
-Ein Desktop-Programm zum Zeichnen mathematischer Funktionen, Parameterkurven, Bode-Diagramme und 3D-Flächen – über
-eine **Tkinter-Oberfläche** oder ohne Oberfläche mit einer Konfigurationsdatei im Textformat.
-
-Entstanden im Python-Kurs an der Hochschule Hannover, Wintersemester 2025/26.
-
-| 📉 Funktionen, Kurvenanalyse und Messwerte | 📶 Bode-Diagramm | 🏔️ 3D-Fläche und Höhenlinien |
+| 📉 Functions, curve analysis and measured data | 📶 Bode diagram | 🏔️ 3D surface and contour lines |
 |---|---|---|
-| ![2D-Plot](docs/plot-2d.png) | ![Bode-Diagramm](docs/plot-bode.png) | ![3D-Plot](docs/plot-3d.png) |
+| ![2D plot](docs/plot-2d.png) | ![Bode diagram](docs/plot-bode.png) | ![3D plot](docs/plot-3d.png) |
 
 ---
 
-## ✨ Funktionen
+## ✨ Features
 
-### 🖼️ Vier Plot-Modi
-* **2D**: mehrere Funktionen f(x) gleichzeitig
-* **🌀 Parametrisch**: Kurven x(t), y(t)
-* **📶 Bode**: Betrag und Phase einer Übertragungsfunktion aus Zähler- und Nennerkoeffizienten
-* **🏔️ 3D**: Flächen- und Höhenliniendiagramme von f(x, y)
-
-### 🔬 Kurvenanalyse
-* Numerische **1. und 2. Ableitung**
-* Markierte **Nullstellen**, **Extrema** und **Wendepunkte** (Nullstellen durch lineare Interpolation verfeinert)
-
-### 📊 Daten & Konfiguration
-* **Messwerte**: x/y-Werte aus einer Textdatei laden und als Linie oder Punktwolke anzeigen
-* **💾 Konfigurationen speichern und laden** als lesbare `Schlüssel: Wert`-Dateien
-* **🎨 Darstellung**: Titel, Achsenbeschriftungen, Gitter, Legende sowie Farbe, Linienbreite und Linienstil pro
-  Funktion
-
-### 🖱️ Interaktive Oberfläche
-* Cursor-Koordinaten live und Punkte **per Klick beschriften**
-* Zoomen und Verschieben über die Matplotlib-Werkzeugleiste, **Export als Bild**
-
-### 🔒 Sichere Auswertung von Ausdrücken
-* Ausdrücke sehen nur eine **freigegebene Liste** von NumPy-Funktionen und Konstanten, keine Python-Built-ins;
-  `^` funktioniert als Potenzoperator
+### 🖼️ Four Plot Modes
+* **2D Plotting**: Draw several functions at once, each with its own colour, line width and line style.
+* **🌀 Parametric Curves**: Plot curves defined by x(t) and y(t).
+* **📶 Bode Diagrams**: Show magnitude and phase of a transfer function from its numerator and denominator
+  coefficients.
+* **🏔️ 3D Surfaces & Contours**: Display functions f(x, y) as a surface and as a contour map side by side.
 
 ---
 
-## 🛠️ Starten
+### 🔬 Curve Analysis
+* **Automatic Markers**: Find and mark **roots**, **extrema** and **inflection points** – roots are refined by
+  linear interpolation.
+* **Derivatives**: Overlay the numerical **1st and 2nd derivative** of every function.
+
+---
+
+### 📊 Data & Configuration
+* **Measured Data**: Load x/y values from a `.txt` or `.csv` file and compare them with the functions, as a line or
+  scatter plot.
+* **💾 Save & Load**: Store all settings in a readable configuration file and restore them later.
+
+---
+
+### 🖱️ Interactive & Safe
+* **Interactive GUI**: Live cursor coordinates, click-to-annotate points, zoom and pan, and export as an image.
+* **Headless Mode**: Generate a plot directly from a configuration file, without opening the GUI.
+* **🔒 Safe Evaluation**: Expressions can only use a whitelist of maths functions – no access to Python built-ins.
+
+---
+
+## 🚀 Getting Started
+
+### 📋 Prerequisites
+
+Python 3 with NumPy and Matplotlib:
 
 ```bash
 pip install numpy matplotlib
-python app.py                                 # Oberfläche
-python app.py examples/config_bode.txt        # ohne Oberfläche: direkt aus einer Konfigurationsdatei plotten
 ```
+
+### 🏃 Running the App
+
+1. **GUI Mode** (default):
+   ```bash
+   python app.py
+   ```
+   Opens the interactive window with all settings.
+
+2. **Headless Mode**:
+   ```bash
+   python app.py examples/config_bode.txt
+   ```
+   Opens the plot for the given configuration file directly.
 
 ---
 
-## 📝 Konfigurationsformat
+## 🛠️ Configuration File Format
+
+Configuration files use a simple `key: value` format:
 
 ```text
-# Zwei Funktionen mit Kurvenanalyse und Messwerten
+# Two functions with curve analysis and measured data
 functions: [exp(-0.5*x)*sin(x), cos(x)]
 xstart: 0
 xend: 10
@@ -69,22 +86,25 @@ data_file: examples/messwerte.txt
 title: Function Plot Example
 ```
 
-Weitere Beispiele liegen in [`examples/`](examples/).
+More examples are in [`examples/`](examples/).
 
 ---
 
-## 🏗️ Aufbau
+## 📂 Project Structure
 
-| Datei | Aufgabe |
-|-------|---------|
-| `app.py` | Einstiegspunkt: Oberfläche, oder Modus ohne Oberfläche, wenn eine Konfigurationsdatei übergeben wird |
-| `gui.py` | Tkinter-Oberfläche mit Bedienelementen für jeden Modus und eingebetteter Matplotlib-Zeichenfläche |
-| `plotter.py` | Alle Plots und die numerische Analyse, unabhängig von der Oberfläche |
-| `config_parser.py` | Liest `Schlüssel: Wert`-Dateien und wandelt die Werte in Wahrheitswerte, Zahlen und Listen um |
-| `widgets.py` | Ein scrollbarer Rahmen für das lange Bedienfeld |
+* `app.py`: Entry point – starts the GUI, or headless mode when a configuration file is given.
+* `gui.py`: The Tkinter interface with controls for every mode and the embedded Matplotlib canvas.
+* `plotter.py`: All plotting and the numerical analysis, independent of the GUI.
+* `config_parser.py`: Reads configuration files and converts the values to booleans, numbers and lists.
+* `widgets.py`: A scrollable frame for the long control panel.
+* `examples/`: Example configurations and measured data.
 
 ---
 
-## 🧰 Technologien
+## 🧩 Supported Math Functions
 
-Python · Tkinter · Matplotlib · NumPy
+Use standard math notation in the input fields:
+
+* `sin`, `cos`, `tan`, `exp`, `log`, `log10`, `sqrt`, `abs`
+* Constants: `pi`, `e`
+* Power operator: `^` (e.g. `x^2`)
